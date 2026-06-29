@@ -481,9 +481,9 @@ function calcBaseStats(index, charClass) {
   const lv1_atk_internal = RARITY_BASE_STAT_TABLE[rarity].ATK * CLASS_MODIFIERS[charClass].ATK;
   const lv1_def_internal = RARITY_BASE_STAT_TABLE[rarity].DEF * CLASS_MODIFIERS[charClass].DEF * WEAPON_DEF_MODIFIER[weapon];
 
-  const base_hp_internal  = lv1_hp_internal  * (1 + k(level) / 20);
-  const base_atk_internal = lv1_atk_internal * (1 + k(level) / 20);
-  const base_def_internal = lv1_def_internal * (1 + k(level) / 20);
+  const base_hp_internal  = Math.floor(lv1_hp_internal  * (1 + k(level) / 20));
+  const base_atk_internal = Math.floor(lv1_atk_internal * (1 + k(level) / 20));
+  const base_def_internal = Math.floor(lv1_def_internal * (1 + k(level) / 20));
 
   const limit_break_count = Math.min(duplicate, 3);
 
@@ -731,6 +731,10 @@ function calcPower(index, charClass) {
         const olLevel = Number(document.getElementById(`char-${index}-ol-${part.key}-${slot}-level`)?.value || 0);
 
         if (jpType && olLevel && overloadData[jpType]) {
+          const entry = overloadData[jpType].find(e => e.level === olLevel);
+          if(entry) {
+            olBonus += Number(entry.skill_multiplier) / 100.0;
+          }
           if (type === 'ElemDamage') {
             elemLines += olLevel;
           }
@@ -741,7 +745,6 @@ function calcPower(index, charClass) {
       }
     }
   }
-  olBonus = CP_COEF * normalLines + CP_COEF * 1.2 * elemLines;
   equipHP  = Math.round(equipHP);
   equipATK = Math.round(equipATK);
   equipDEF = Math.round(equipDEF);
