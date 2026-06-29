@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>おまるち戦力計算機 | NIKKE Power Calculator</title>
+  <title>おまるち戦力計算機</title>
   <meta name="description" content="おまるちでの戦力を計算するよ">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
+  <button id="sidebar-toggle" type="button">研究 / データ管理</button>
+  <div id="sidebar-overlay"></div>    <div id="app">
     <!-- サイドバー -->
     <aside id="sidebar">
       <h3>研究レベル</h3>
@@ -53,7 +54,7 @@
           <label>アブノーマル <input id="corp-research-abnormal" type="number" value="0" min="0"></label>
         </div>
       </fieldset>
-      <fieldset style="margin-top: auto;">                                                                                                                   
+      <fieldset>                                                                                                                   
         <legend>データ管理</legend>                                                                                                                          
         <div style="display: flex; gap: 8px; flex-direction: column;">                                                                                       
           <button id="export-btn" type="button">エクスポート (JSON)</button>                                                                              
@@ -126,7 +127,6 @@
           </div>
         </form>
       </dialog>
-
     </main>
   </div>
 

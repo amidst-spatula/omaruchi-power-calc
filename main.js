@@ -154,7 +154,7 @@ function createCharCard(index, info) {
 
   const title = document.createElement('strong');
   title.textContent = `${info.name} [${info.rarity}] ${CORP_LABELS[info.corp] || info.corp} / ${info.weapon} (${info.class === 'attacker' ? '火力型' : info.class === 'defender' ? '防御型' : '支援型'})`;
-  title.addEventListener('click', () => {
+  header.addEventListener('click', () => {
     const detail = document.getElementById(`char-${index}-detail`);
     detail.style.display = detail.style.display === 'none' ? 'block' : 'none';
   });
@@ -383,9 +383,9 @@ function createCharCard(index, info) {
 
 // 限界突破の表示文字列
 function duplicateDisplay(val) {
-  if (val === 10) return '☆☆☆ MAX';
-  if (val <= 3) return '☆'.repeat(val) || '—';
-  return '☆☆☆' + String(val - 3).padStart(2, '0');
+  if (val === 10) return '★★★ MAX';
+  if (val <= 3) return '★'.repeat(val) || '—';
+  return '★★★' + String(val - 3).padStart(2, '0');
 }
 
 const CP_COEF = 0.006900;
@@ -1042,3 +1042,20 @@ importFile.addEventListener('change', (e) => {
   // テキストとしてファイルを読み込む
   reader.readAsText(file);
 });
+
+const sidebarToggle = document.getElementById('sidebar-toggle');                                                                                             
+const sidebar = document.getElementById('sidebar');                                                                                                          
+const sidebarOverlay = document.getElementById('sidebar-overlay');                                                                                           
+                                                                                                                                                              
+function toggleSidebar() {                                                                                                                                   
+  // open / show というクラスをつけたり消したりする                                                                                                          
+  sidebar.classList.toggle('open');                                                                                                                          
+  sidebarOverlay.classList.toggle('show');                                                                                                                   
+}
+
+if (sidebarToggle && sidebarOverlay) {
+  // ボタンを押した時
+  sidebarToggle.addEventListener('click', toggleSidebar);
+  // 暗い背景部分をタップした時も閉じるようにする
+  sidebarOverlay.addEventListener('click', toggleSidebar);
+}
