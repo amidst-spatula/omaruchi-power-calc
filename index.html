@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>おまるち戦力計算機</title>
   <meta name="description" content="おまるちでの戦力を計算するよ">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
   <button id="sidebar-toggle" type="button">研究 / データ管理</button>
@@ -68,7 +65,14 @@
     <!-- メインエリア -->
     <main id="main">
       <h1>おまるち戦力計算機</h1>
-
+      <div class="notice-box">                                                                                                                               
+        <h4>注意</h4>                                                                                                                           
+        <ul>                                                                                                                                                 
+          <li>計算結果はゲーム内と数ポイントの誤差が生じる場合があります。</li>                                                                              
+          <li>スマホでご利用の場合は、右下のボタンから設定を開けます。</li>                                                                                  
+          <li>入力したデータはブラウザに自動保存されます。</li>                                                                                              
+        </ul>                                                                                                                                                
+      </div>                        
       <div id="char-list"></div>
 
       <button id="add-char-btn" type="button">＋ キャラ追加</button>
