@@ -156,7 +156,8 @@ function createCharCard(index, info) {
   title.textContent = `${info.name} [${info.rarity}] ${CORP_LABELS[info.corp] || info.corp} / ${info.weapon} (${info.class === 'attacker' ? '火力型' : info.class === 'defender' ? '防御型' : '支援型'})`;
   header.addEventListener('click', () => {
     const detail = document.getElementById(`char-${index}-detail`);
-    detail.style.display = detail.style.display === 'none' ? 'block' : 'none';
+    const isHidden = getComputedStyle(detail).display === 'none';
+    detail.style.display = isHidden ? 'block' : 'none';
   });
 
   // 外部参照用の名前・レアリティ・型式・企業保持要素
