@@ -41,6 +41,12 @@
   z-index: 998;
 }
 
+.duplicate-display {
+  display: inline-block;
+  width: 6em;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   #sidebar-toggle {
     display: flex;
