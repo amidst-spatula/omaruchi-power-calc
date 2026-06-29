@@ -51,28 +51,29 @@
           <label>アブノーマル <input id="corp-research-abnormal" type="number" value="0" min="0"></label>
         </div>
       </fieldset>
-      <fieldset>                                                                                                                   
-        <legend>データ管理</legend>                                                                                                                          
-        <div style="display: flex; gap: 8px; flex-direction: column;">                                                                                       
-          <button id="export-btn" type="button">エクスポート (JSON)</button>                                                                              
-          <button id="import-btn" type="button">インポート (JSON)</button>                                                                                
-          <!-- 実際にファイルを選ぶための見えないinput -->                                                                                                   
-          <input type="file" id="import-file" accept=".json" style="display: none;">                                                                         
-        </div>                                                                                                                                               
-      </fieldset>         
+      <fieldset>
+        <legend>データ管理</legend
+        <div style="display: flex; gap: 8px; flex-direction: column;">
+          <button id="export-btn" type="button">エクスポート (JSON)</button>
+          <button id="import-btn" type="button">インポート (JSON)</button>
+          <!-- 実際にファイルを選ぶための見えないinput -->
+          <input type="file" id="import-file" accept=".json" style="display: none;">
+        </div>
+      </fieldset>
     </aside>
 
     <!-- メインエリア -->
     <main id="main">
       <h1>おまるち戦力計算機</h1>
-      <div class="notice-box">                                                                                                                               
-        <h4>注意</h4>                                                                                                                           
-        <ul>                                                                                                                                                 
-          <li>計算結果はゲーム内と数ポイントの誤差が生じる場合があります。</li>                                                                              
-          <li>スマホでご利用の場合は、右下のボタンから設定を開けます。</li>                                                                                  
-          <li>入力したデータはブラウザに自動保存されます。</li>                                                                                              
-        </ul>                                                                                                                                                
-      </div>                        
+      <div class="notice-box">
+        <h4>注意</h4>
+        <ul>
+          <li>計算結果はゲーム内と数ポイントの誤差が生じる場合があります(結構ズレる)</li>
+          <li>スマホでご利用の場合は、右下のボタンから設定を開けます</li>
+          <li>入力したデータはブラウザに自動保存されます</li>
+          <li><a href="https://github.com/amidst-spatula/">Githubリポジトリ</a></li>
+        </ul>
+      </div>
       <div id="char-list"></div>
 
       <button id="add-char-btn" type="button">＋ キャラ追加</button>
