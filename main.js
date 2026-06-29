@@ -501,12 +501,6 @@ function calcBaseStats(index, charClass) {
   const atk_after_lb = Math.round(base_atk_internal) + limit_break_bonus_atk;
   const def_after_lb = Math.round(base_def_internal) + limit_break_bonus_def;
 
-  const core = Math.max(duplicate - 3, 0);
-
-  const core_bonus_hp  = Math.round(hp_after_lb  * 0.02 * core);
-  const core_bonus_atk = Math.round(atk_after_lb * 0.02 * core);
-  const core_bonus_def = Math.round(def_after_lb * 0.02 * core);
-
   const bond_rate = 3.9 * Math.pow(Math.max(0, bond - 1) / 39, 1.2);
 
   const bond_base_hp  = 15000;
@@ -525,9 +519,19 @@ function calcBaseStats(index, charClass) {
   const research_bonus_atk = manufacturer_research * 25;
   const research_bonus_def = class_research * 5 + manufacturer_research * 5;
 
-  const final_hp   = hp_after_lb  + core_bonus_hp  + bond_hp  + research_bonus_hp;
-  const final_atk  = atk_after_lb + core_bonus_atk + bond_atk + research_bonus_atk;
-  const final_def  = def_after_lb + core_bonus_def + bond_def + research_bonus_def;
+  const hp_subtotal  = hp_after_lb  + bond_hp  + research_bonus_hp;
+  const atk_subtotal = atk_after_lb + bond_atk + research_bonus_atk;
+  const def_subtotal = def_after_lb + bond_def + research_bonus_def;
+
+  const core = Math.max(duplicate - 3, 0);
+
+  const core_bonus_hp  = Math.round(hp_subtotal  * 0.02 * core);
+  const core_bonus_atk = Math.round(atk_subtotal * 0.02 * core);
+  const core_bonus_def = Math.round(def_subtotal * 0.02 * core);
+
+  const final_hp   = hp_subtotal  + core_bonus_hp;
+  const final_atk  = atk_subtotal + core_bonus_atk;
+  const final_def  = def_subtotal + core_bonus_def;
 
   console.table({
     base_hp_internal,
