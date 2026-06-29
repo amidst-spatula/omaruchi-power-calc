@@ -1,3 +1,4 @@
+const IS_DEBUG = new URLSearchParams(window.location.search).has('debug');
 let charIndex = 0;
 let overloadData = {};
 let equipData = {};
@@ -267,6 +268,15 @@ function createCharCard(index, info) {
         <input type="number" id="char-${index}-bond" value="0" min="0" max="40" style="width:80px;">
       </label>
     </div>
+    <fieldset ${IS_DEBUG ? '' : 'hidden'}>
+      <legend>実際のステータス（デバッグ用）</legend>
+      <div>
+        <label>戦闘力 <input type="number" id="char-${index}-actual-power" value="" min="0" style="width:100px;"></label>
+        <label>HP <input type="number" id="char-${index}-actual-hp" value="" min="0" style="width:100px;"></label>
+        <label>攻撃力 <input type="number" id="char-${index}-actual-atk" value="" min="0" style="width:100px;"></label>
+        <label>防御力 <input type="number" id="char-${index}-actual-def" value="" min="0" style="width:100px;"></label>
+      </div>
+    </fieldset>
   `;
 
   // 限界突破の±ボタン制御
@@ -875,6 +885,13 @@ function saveToLocalStorage() {
       cubeLevel: document.getElementById(`char-${index}-cube-level`)?.value || "0",
     };
 
+    const actualStats = {
+      power: document.getElementById(`char-${index}-actual-power`)?.value || "",
+      hp: document.getElementById(`char-${index}-actual-hp`)?.value || "",
+      atk: document.getElementById(`char-${index}-actual-atk`)?.value || "",
+      def: document.getElementById(`char-${index}-actual-def`)?.value || "",
+    };
+
     // 装備の保存 (EQUIP_PARTS をループして取得)
     const equips = {};
     for (const part of EQUIP_PARTS) {
@@ -888,7 +905,7 @@ function saveToLocalStorage() {
       };
     }
 
-    characters.push({ info, stats, equips });
+    characters.push({ info, stats, actualStats, equips });
   });
 
   // まとめて JSON 文字列にして保存！
@@ -964,6 +981,18 @@ function loadFromLocalStorage() {
             document.getElementById(`char-${charIndex}-ol-${part.key}-${slot}-level`).value = ol.level;
           }
         });
+      }
+
+      // 実際のステータスの復元
+      if (char.actualStats) {
+        const ap = document.getElementById(`char-${charIndex}-actual-power`);
+        const ah = document.getElementById(`char-${charIndex}-actual-hp`);
+        const aa = document.getElementById(`char-${charIndex}-actual-atk`);
+        const ad = document.getElementById(`char-${charIndex}-actual-def`);
+        if (ap) ap.value = char.actualStats.power || "";
+        if (ah) ah.value = char.actualStats.hp || "";
+        if (aa) aa.value = char.actualStats.atk || "";
+        if (ad) ad.value = char.actualStats.def || "";
       }
 
       // 最後にこのキャラの戦闘力を再計算
