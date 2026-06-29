@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おまるち戦力計算機 | NIKKE Power Calculator</title>
+  <meta name="description" content="おまるちでの戦力を計算するよ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- サイドバー -->
+    <aside id="sidebar">
+      <h3>研究レベル</h3>
+
+      <fieldset>
+        <div>
+          <label>共通研究<input id="general-research" type="number" value="0" min="0"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>型式研究</legend>
+        <div>
+          <label>火力型 <input id="class-research-attacker" type="number" value="0" min="0"></label>
+        </div>
+        <div>
+          <label>防御型 <input id="class-research-defender" type="number" value="0" min="0"></label>
+        </div>
+        <div>
+          <label>支援型 <input id="class-research-supporter" type="number" value="0" min="0"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>企業研究</legend>
+        <div>
+          <label>エリシオン <input id="corp-research-elysion" type="number" value="0" min="0"></label>
+        </div>
+        <div>
+          <label>ミシリス <input id="corp-research-missilis" type="number" value="0" min="0"></label>
+        </div>
+        <div>
+          <label>テトラ <input id="corp-research-tetra" type="number" value="0" min="0"></label>
+        </div>
+        <div>
+          <label>ピルグリム <input id="corp-research-pilgrim" type="number" value="0" min="0"></label>
+        </div>
+        <div>
+          <label>アブノーマル <input id="corp-research-abnormal" type="number" value="0" min="0"></label>
+        </div>
+      </fieldset>
+      <fieldset style="margin-top: auto;">                                                                                                                   
+        <legend>データ管理</legend>                                                                                                                          
+        <div style="display: flex; gap: 8px; flex-direction: column;">                                                                                       
+          <button id="export-btn" type="button">エクスポート (JSON)</button>                                                                              
+          <button id="import-btn" type="button">インポート (JSON)</button>                                                                                
+          <!-- 実際にファイルを選ぶための見えないinput -->                                                                                                   
+          <input type="file" id="import-file" accept=".json" style="display: none;">                                                                         
+        </div>                                                                                                                                               
+      </fieldset>         
+    </aside>
+
+    <!-- メインエリア -->
+    <main id="main">
+      <h1>おまるち戦力計算機</h1>
+
+      <div id="char-list"></div>
+
+      <button id="add-char-btn" type="button">＋ キャラ追加</button>
+
+      <dialog id="add-char-dialog">
+        <form method="dialog">
+          <h3>キャラ追加</h3>
+          <div>
+            <label>名前 <input type="text" id="dialog-name" required></label>
+          </div>
+          <div>
+            <label>レアリティ
+              <select id="dialog-rarity">
+                <option value="SSR">SSR</option>
+                <option value="SR">SR</option>
+                <option value="R">R</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>企業
+              <select id="dialog-corp">
+                <option value="elysion">エリシオン</option>
+                <option value="missilis">ミシリス</option>
+                <option value="tetra">テトラ</option>
+                <option value="abnormal">アブノーマル</option>
+                <option value="pilgrim">ピルグリム</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>クラス
+              <select id="dialog-class">
+                <option value="attacker">火力型</option>
+                <option value="defender">防御型</option>
+                <option value="supporter">支援型</option>
+              </select>
+            </label>
+          </div>
+
+          <div>
+            <label>武器種
+              <select id="dialog-weapon">
+                <option value="AR">AR</option>
+                <option value="SMG">SMG</option>
+                <option value="SG">SG</option>
+                <option value="SR">SR</option>
+                <option value="RL">RL</option>
+                <option value="MG">MG</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <button type="submit" value="ok">追加</button>
+            <button type="submit" value="cancel" formnovalidate>キャンセル</button>
+          </div>
+        </form>
+      </dialog>
+
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

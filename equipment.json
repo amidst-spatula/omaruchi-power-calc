@@ -1,0 +1,582 @@
+{
+  "1": {
+    "head": {
+      "attacker": {
+        "HP": 540,
+        "ATK": 66
+      },
+      "defender": {
+        "HP": 660,
+        "ATK": 44
+      },
+      "supporter": {
+        "HP": 600,
+        "ATK": 55
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 1755,
+        "ATK": 12
+      },
+      "defender": {
+        "HP": 2145,
+        "ATK": 8
+      },
+      "supporter": {
+        "HP": 1950,
+        "ATK": 10
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 42,
+        "DEF": 7
+      },
+      "defender": {
+        "ATK": 28,
+        "DEF": 9
+      },
+      "supporter": {
+        "ATK": 35,
+        "DEF": 8
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 405,
+        "DEF": 11
+      },
+      "defender": {
+        "HP": 495,
+        "DEF": 13
+      },
+      "supporter": {
+        "HP": 450,
+        "DEF": 12
+      }
+    }
+  },
+  "2": {
+    "head": {
+      "attacker": {
+        "HP": 707,
+        "ATK": 86
+      },
+      "defender": {
+        "HP": 865,
+        "ATK": 58
+      },
+      "supporter": {
+        "HP": 540,
+        "ATK": 66
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 2300,
+        "ATK": 16
+      },
+      "defender": {
+        "HP": 2811,
+        "ATK": 10
+      },
+      "supporter": {
+        "HP": 2555,
+        "ATK": 13
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 55,
+        "DEF": 9
+      },
+      "defender": {
+        "ATK": 37,
+        "DEF": 11
+      },
+      "supporter": {
+        "ATK": 46,
+        "DEF": 10
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 531,
+        "DEF": 14
+      },
+      "defender": {
+        "HP": 649,
+        "DEF": 18
+      },
+      "supporter": {
+        "HP": 590,
+        "DEF": 16
+      }
+    }
+  },
+  "3": {
+    "head": {
+      "attacker": {
+        "HP": 927,
+        "ATK": 114
+      },
+      "defender": {
+        "HP": 1133,
+        "ATK": 76
+      },
+      "supporter": {
+        "HP": 1030,
+        "ATK": 95
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 3013,
+        "ATK": 20
+      },
+      "defender": {
+        "HP": 3683,
+        "ATK": 14
+      },
+      "supporter": {
+        "HP": 3348,
+        "ATK": 17
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 72,
+        "DEF": 13
+      },
+      "defender": {
+        "ATK": 48,
+        "DEF": 15
+      },
+      "supporter": {
+        "ATK": 60,
+        "DEF": 14
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 696,
+        "DEF": 18
+      },
+      "defender": {
+        "HP": 850,
+        "DEF": 22
+      },
+      "supporter": {
+        "HP": 773,
+        "DEF": 20
+      }
+    }
+  },
+  "4": {
+    "head": {
+      "attacker": {
+        "HP": 1521,
+        "ATK": 186
+      },
+      "defender": {
+        "HP": 1859,
+        "ATK": 124
+      },
+      "supporter": {
+        "HP": 1690,
+        "ATK": 155
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 4944,
+        "ATK": 34
+      },
+      "defender": {
+        "HP": 6042,
+        "ATK": 22
+      },
+      "supporter": {
+        "HP": 5943,
+        "ATK": 28
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 119,
+        "DEF": 20
+      },
+      "defender": {
+        "ATK": 79,
+        "DEF": 24
+      },
+      "supporter": {
+        "ATK": 99,
+        "DEF": 22
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 1141,
+        "DEF": 31
+      },
+      "defender": {
+        "HP": 1395,
+        "DEF": 37
+      },
+      "supporter": {
+        "HP": 1395,
+        "DEF": 37
+      }
+    }
+  },
+  "5": {
+    "head": {
+      "attacker": {
+        "HP": 2495,
+        "ATK": 305
+      },
+      "defender": {
+        "HP": 3049,
+        "ATK": 203
+      },
+      "supporter": {
+        "HP": 2772,
+        "ATK": 254
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 8108,
+        "ATK": 55
+      },
+      "defender": {
+        "HP": 9910,
+        "ATK": 37
+      },
+      "supporter": {
+        "HP": 9009,
+        "ATK": 46
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 194,
+        "DEF": 33
+      },
+      "defender": {
+        "ATK": 130,
+        "DEF": 41
+      },
+      "supporter": {
+        "ATK": 162,
+        "DEF": 37
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 1871,
+        "DEF": 50
+      },
+      "defender": {
+        "HP": 2287,
+        "DEF": 61
+      },
+      "supporter": {
+        "HP": 2079,
+        "DEF": 55
+      }
+    }
+  },
+  "6": {
+    "head": {
+      "attacker": {
+        "HP": 4367,
+        "ATK": 534
+      },
+      "defender": {
+        "HP": 5337,
+        "ATK": 356
+      },
+      "supporter": {
+        "HP": 4852,
+        "ATK": 445
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 14192,
+        "ATK": 97
+      },
+      "defender": {
+        "HP": 17346,
+        "ATK": 65
+      },
+      "supporter": {
+        "HP": 15769,
+        "ATK": 81
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 340,
+        "DEF": 58
+      },
+      "defender": {
+        "ATK": 226,
+        "DEF": 70
+      },
+      "supporter": {
+        "ATK": 283,
+        "DEF": 64
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 3275,
+        "DEF": 87
+      },
+      "defender": {
+        "HP": 4003,
+        "DEF": 107
+      },
+      "supporter": {
+        "HP": 3639,
+        "DEF": 97
+      }
+    }
+  },
+  "7": {
+    "head": {
+      "attacker": {
+        "HP": 7643,
+        "ATK": 935
+      },
+      "defender": {
+        "HP": 9341,
+        "ATK": 623
+      },
+      "supporter": {
+        "HP": 8492,
+        "ATK": 779
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 24839,
+        "ATK": 170
+      },
+      "defender": {
+        "HP": 30359,
+        "ATK": 114
+      },
+      "supporter": {
+        "HP": 27599,
+        "ATK": 142
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 595,
+        "DEF": 102
+      },
+      "defender": {
+        "ATK": 397,
+        "DEF": 124
+      },
+      "supporter": {
+        "ATK": 496,
+        "DEF": 113
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 5732,
+        "DEF": 152
+      },
+      "defender": {
+        "HP": 7006,
+        "DEF": 186
+      },
+      "supporter": {
+        "HP": 6369,
+        "DEF": 169
+      }
+    }
+  },
+  "8": {
+    "head": {
+      "attacker": {
+        "HP": 14216,
+        "ATK": 1739
+      },
+      "defender": {
+        "HP": 17376,
+        "ATK": 1159
+      },
+      "supporter": {
+        "HP": 15796,
+        "ATK": 1449
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 46203,
+        "ATK": 316
+      },
+      "defender": {
+        "HP": 56471,
+        "ATK": 210
+      },
+      "supporter": {
+        "HP": 51337,
+        "ATK": 263
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 1106,
+        "DEF": 189
+      },
+      "defender": {
+        "ATK": 738,
+        "DEF": 231
+      },
+      "supporter": {
+        "ATK": 922,
+        "DEF": 210
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 10662,
+        "DEF": 284
+      },
+      "defender": {
+        "HP": 13032,
+        "DEF": 347
+      },
+      "supporter": {
+        "HP": 11847,
+        "DEF": 315
+      }
+    }
+  },
+  "9": {
+    "head": {
+      "attacker": {
+        "HP": 26442,
+        "ATK": 3233
+      },
+      "defender": {
+        "HP": 32318,
+        "ATK": 2155
+      },
+      "supporter": {
+        "HP": 29380,
+        "ATK": 2694
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 85937,
+        "ATK": 588
+      },
+      "defender": {
+        "HP": 105034,
+        "ATK": 392
+      },
+      "supporter": {
+        "HP": 95485,
+        "ATK": 490
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 2058,
+        "DEF": 352
+      },
+      "defender": {
+        "ATK": 1372,
+        "DEF": 430
+      },
+      "supporter": {
+        "ATK": 1715,
+        "DEF": 391
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 19832,
+        "DEF": 527
+      },
+      "defender": {
+        "HP": 24239,
+        "DEF": 645
+      },
+      "supporter": {
+        "HP": 22035,
+        "DEF": 586
+      }
+    }
+  },
+  "10": {
+    "head": {
+      "attacker": {
+        "HP": 49181,
+        "ATK": 6014
+      },
+      "defender": {
+        "HP": 60111,
+        "ATK": 4010
+      },
+      "supporter": {
+        "HP": 54646,
+        "ATK": 5012
+      }
+    },
+    "torso": {
+      "attacker": {
+        "HP": 159840,
+        "ATK": 1093
+      },
+      "defender": {
+        "HP": 195360,
+        "ATK": 729
+      },
+      "supporter": {
+        "HP": 177600,
+        "ATK": 911
+      }
+    },
+    "arms": {
+      "attacker": {
+        "ATK": 3827,
+        "DEF": 654
+      },
+      "defender": {
+        "ATK": 2551,
+        "DEF": 800
+      },
+      "supporter": {
+        "ATK": 3189,
+        "DEF": 727
+      }
+    },
+    "legs": {
+      "attacker": {
+        "HP": 36887,
+        "DEF": 981
+      },
+      "defender": {
+        "HP": 45084,
+        "DEF": 1199
+      },
+      "supporter": {
+        "HP": 40895,
+        "DEF": 1090
+      }
+    }
+  }
+}
