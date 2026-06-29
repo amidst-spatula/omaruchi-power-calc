@@ -401,6 +401,16 @@ function duplicateDisplay(val) {
 
 const CP_COEF = 0.006900;
 
+function roundHalfToOdd(x) {
+  const f = Math.floor(x);
+  const frac = x - f;
+  if (Math.abs(frac - 0.5) < 1e-9) {
+    // ちょうど 0.5: 奇数側に丸める
+    return f % 2 === 1 ? f : f + 1;
+  }
+  return Math.round(x);
+}
+
 const RARITY_BASE_STAT_TABLE = {
   R: {
     HP: 11500,
@@ -481,9 +491,9 @@ function calcBaseStats(index, charClass) {
   const lv1_atk_internal = RARITY_BASE_STAT_TABLE[rarity].ATK * CLASS_MODIFIERS[charClass].ATK;
   const lv1_def_internal = RARITY_BASE_STAT_TABLE[rarity].DEF * CLASS_MODIFIERS[charClass].DEF * WEAPON_DEF_MODIFIER[weapon];
 
-  const base_hp_internal  = Math.floor(lv1_hp_internal  * (1 + k(level) / 20));
-  const base_atk_internal = Math.floor(lv1_atk_internal * (1 + k(level) / 20));
-  const base_def_internal = Math.floor(lv1_def_internal * (1 + k(level) / 20));
+  const base_hp_internal  = lv1_hp_internal  * (1 + k(level) / 20);
+  const base_atk_internal = lv1_atk_internal * (1 + k(level) / 20);
+  const base_def_internal = lv1_def_internal * (1 + k(level) / 20);
 
   const limit_break_count = Math.min(duplicate, 3);
 
@@ -711,17 +721,15 @@ function calcPower(index, charClass) {
   let equipDEF = 0;
 
   let olBonus = 0;
-  let normalLines = 0;
-  let elemLines = 0;
   for (const part of EQUIP_PARTS) {
     const tier = document.getElementById(`char-${index}-equip-${part.key}-tier`)?.value;
     if (tier && tier !== '0' && equipData[tier]) {
       const stats = equipData[tier][part.key][charClass] || {};
       const equipLvNum = Number(document.getElementById(`char-${index}-equip-${part.key}-level`)?.value || 0);
       const scale = 1 + equipLvNum / 10;
-      equipHP  += ((stats.HP  || 0) * scale);
-      equipATK += ((stats.ATK || 0) * scale);
-      equipDEF += ((stats.DEF || 0) * scale);
+      equipHP  += roundHalfToOdd((stats.HP  || 0) * scale);
+      equipATK += roundHalfToOdd((stats.ATK || 0) * scale);
+      equipDEF += roundHalfToOdd((stats.DEF || 0) * scale);
     }
     
     if (tier === '10') {
@@ -732,22 +740,14 @@ function calcPower(index, charClass) {
 
         if (jpType && olLevel && overloadData[jpType]) {
           const entry = overloadData[jpType].find(e => e.level === olLevel);
-          if(entry) {
+          if (entry) {
             olBonus += Number(entry.skill_multiplier) / 100.0;
-          }
-          if (type === 'ElemDamage') {
-            elemLines += olLevel;
-          }
-          else {
-            normalLines += olLevel;
           }
         }
       }
     }
   }
-  equipHP  = Math.round(equipHP);
-  equipATK = Math.round(equipATK);
-  equipDEF = Math.round(equipDEF);
+  // roundHalfToOdd は各部位ごとに適用済み（整数の合算なので追加の丸めは不要）
 
   const cube_bonus = calcCubeBonus(index, charClass);
   const doll_bonus = calcDollBonus(index, charClass);
@@ -767,8 +767,6 @@ function calcPower(index, charClass) {
     equipHP,
     equipATK,
     equipDEF,
-    normalLines,
-    elemLines,
     cubeHP: cube_bonus.HP,
     cubeATK: cube_bonus.ATK,
     cubeDEF: cube_bonus.DEF,
