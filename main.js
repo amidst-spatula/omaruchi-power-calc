@@ -543,29 +543,6 @@ function calcBaseStats(index, charClass) {
   const final_atk  = atk_subtotal + core_bonus_atk;
   const final_def  = def_subtotal + core_bonus_def;
 
-  console.table({
-    base_hp_internal,
-    base_atk_internal,
-    base_def_internal,
-    limit_break_bonus_hp,
-    limit_break_bonus_atk,
-    limit_break_bonus_def,
-    hp_after_lb,
-    atk_after_lb,
-    def_after_lb,
-    core_bonus_hp,
-    core_bonus_atk,
-    core_bonus_def,
-    bond_hp,
-    bond_atk,
-    bond_def,
-    research_bonus_hp,
-    research_bonus_atk,
-    research_bonus_def,
-    final_hp,
-    final_atk,
-    final_def
-  });
   return {
     HP:  final_hp,
     ATK: final_atk,
@@ -760,37 +737,6 @@ function calcPower(index, charClass) {
   const base_cp = (18*atk*(crit_rate*(crit_damage-1)+1)+0.7*(def*100+hp))/100;
 
   const bonus_cp = skill_bonus + olBonus + cube_bonus.bonus + doll_bonus.bonus;
-  console.table({
-    base_HP,
-    base_ATK,
-    base_DEF,
-    equipHP,
-    equipATK,
-    equipDEF,
-    cubeHP: cube_bonus.HP,
-    cubeATK: cube_bonus.ATK,
-    cubeDEF: cube_bonus.DEF,
-    dollHP: doll_bonus.HP,
-    dollATK: doll_bonus.ATK,
-    dollDEF: doll_bonus.DEF,
-    hp,
-    atk,
-    def,
-    skill_bonus,
-    olBonus,
-    cubeBonus: cube_bonus.bonus,
-    dollBonus: doll_bonus.bonus,
-    raw_round: Math.round(base_cp * bonus_cp),
-    raw_floor: Math.floor(base_cp * bonus_cp),
-    raw_ceil: Math.ceil(base_cp * bonus_cp),
-    base_floor_round: Math.round(Math.floor(base_cp) * bonus_cp),
-    base_round_round: Math.round(Math.round(base_cp) * bonus_cp),
-    base_ceil_ceil: Math.ceil(Math.ceil(base_cp) * bonus_cp),
-    base_cp,
-    bonus_cp,
-    cpRaw: base_cp * bonus_cp,
-  });
-
   return Math.round(base_cp * (bonus_cp));
 }
 
