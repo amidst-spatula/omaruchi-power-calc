@@ -644,9 +644,26 @@ function calcDollBonus(index, charClass) {
     const HP  = DOLL_STAT_TABLE[collection_type][collection_phase].HP;
     const ATK = DOLL_STAT_TABLE[collection_type][collection_phase].ATK;
     const DEF = DOLL_STAT_TABLE[collection_type][collection_phase].DEF;
-    const skill_lv = Math.floor(collection_phase / 5) + 1;
-    const doll_bonus = CP_COEF * (skill_lv + skill_lv) +
-      CP_COEF * (19 * Math.ceil(skill_lv / (skill_lv + 1)) + 13 * Math.ceil(skill_lv / (skill_lv + 1))) / 3;
+    const skill1_lv = Math.floor(collection_phase / 5) + 1;
+    const skill2_lv = 0;
+    const doll_bonus = CP_COEF * (skill1_lv + skill2_lv) +
+      CP_COEF * (19 * Math.ceil(skill1_lv / (skill1_lv + 1)) + 13 * Math.ceil(skill2_lv / (skill2_lv + 1))) / 3;
+
+    return {
+      bonus: doll_bonus,
+      HP: HP,
+      ATK: ATK,
+      DEF: DEF,
+    }
+  }
+  else if (collection_type === 'SR') {
+    const HP  = DOLL_STAT_TABLE[collection_type][collection_phase].HP;
+    const ATK = DOLL_STAT_TABLE[collection_type][collection_phase].ATK;
+    const DEF = DOLL_STAT_TABLE[collection_type][collection_phase].DEF;
+    const skill1_lv = Math.floor(collection_phase / 5) + 1;
+    const skill2_lv = Math.floor(collection_phase / 5) + 1;
+    const doll_bonus = CP_COEF * (skill1_lv + skill2_lv) +
+      CP_COEF * (19 * Math.ceil(skill1_lv / (skill1_lv + 1)) + 13 * Math.ceil(skill2_lv / (skill2_lv + 1))) / 3;
 
     return {
       bonus: doll_bonus,
@@ -659,9 +676,10 @@ function calcDollBonus(index, charClass) {
     const HP  = DOLL_STAT_TABLE['SR'][15].HP;
     const ATK = DOLL_STAT_TABLE['SR'][15].ATK;
     const DEF = DOLL_STAT_TABLE['SR'][15].DEF;
-    const skill_lv = 4;
-    const doll_bonus = CP_COEF * (skill_lv + skill_lv) +
-      CP_COEF * (19 * Math.ceil(skill_lv / (skill_lv + 1)) + 13 * Math.ceil(skill_lv / (skill_lv + 1))) / 3;
+    const skill1_lv = 4;
+    const skill2_lv = 4;
+    const doll_bonus = CP_COEF * (skill1_lv + skill2_lv) +
+      CP_COEF * (19 * Math.ceil(skill1_lv / (skill1_lv + 1)) + 13 * Math.ceil(skill2_lv / (skill2_lv + 1))) / 3;
     return {
       bonus: doll_bonus,
       HP: HP,
