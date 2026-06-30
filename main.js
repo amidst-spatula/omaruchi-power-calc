@@ -640,7 +640,7 @@ function calcDollBonus(index, charClass) {
   const collection_type = document.getElementById(`char-${index}-collection-type`)?.value;
   const collection_phase = document.getElementById(`char-${index}-collection-phase`)?.value;
 
-  if (collection_type === 'R' || collection_type === 'SR') {
+  if (collection_type === 'R') {
     const HP  = DOLL_STAT_TABLE[collection_type][collection_phase].HP;
     const ATK = DOLL_STAT_TABLE[collection_type][collection_phase].ATK;
     const DEF = DOLL_STAT_TABLE[collection_type][collection_phase].DEF;
